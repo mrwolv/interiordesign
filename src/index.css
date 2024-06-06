@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+  --swiper-pagination-color: #FF8E7D;
+}
+
+
+.custom-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  margin: 0 5px;
+  border: 1px solid #F9A489;
+}
+
+.slick-dots li.slick-active .custom-dot {
+  background-color: #F9A489;
+}
+
+
+@layer utilities {
+  .button {
+    @apply border w-[200px] h-[55px] text-white hover:text-[#FF937F] flex justify-center items-center relative;
+  }
+
+  .button::before {
+    @apply content-[''] absolute w-[100%] h-[100%] bg-white top-0 right-0 scale-y-0 transition-transform ease-in-out origin-top duration-500;
+  }
+
+  .button:hover::before {
+    @apply scale-y-100;
+  }
+  .rotate-icon {
+    @apply transition-transform duration-300;
+  }
+
+  .button:hover .rotate-icon {
+    @apply transform rotate-45;
+  }
+}
+
+@layer utilities {
+  .colorButton {
+    @apply border w-[200px] h-[55px] bg-gradient-to-b from-[#FF8E7D] to-[#ffc99e] hover:text-white flex justify-center items-center relative;
+  }
+
+  .colorButton::before {
+    @apply content-[''] absolute w-[100%] h-[100%] bg-gradient-to-b from-[#FF8E7D] to-[#f9bc9a] top-0 right-0 scale-y-0 transition-transform ease-in-out origin-top duration-500;
+  }
+
+  .colorButton:hover::before {
+    @apply scale-y-100;
+  }
+}
